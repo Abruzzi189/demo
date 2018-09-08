@@ -5,6 +5,7 @@
  */
 package services.impl;
 
+import dao.impl.LoginDaoImpl;
 import entity.User;
 import service.LoginServices;
 
@@ -16,7 +17,7 @@ public class LoginServicesImp implements LoginServices{
 
     @Override
     public boolean checkLogin(User a) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return LoginDaoImpl.getInstance().checkLogin(a);
     }
     
 }
