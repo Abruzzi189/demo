@@ -13,8 +13,13 @@ import service.LoginServices;
  *
  * @author Admin
  */
-public class LoginServicesImp implements LoginServices{
-
+public class LoginServicesImpl implements LoginServices{
+    private static LoginServicesImpl instance = new LoginServicesImpl();
+    
+    public static LoginServicesImpl getInstance()
+    {
+        return instance;
+    }
     @Override
     public boolean checkLogin(User a) {
         return LoginDaoImpl.getInstance().checkLogin(a);
